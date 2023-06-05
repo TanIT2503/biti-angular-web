@@ -1,0 +1,184 @@
+<form >
+    <div class="profile">
+        <div class="profile-info profile-form">
+            <div class="profile-form__header">
+                <div class="profile-form__header-title">
+                    Hồ sơ của tôi
+                </div>
+                <div class="profile-form__header-notice">
+                    Vui lòng khai báo thông tin chính xác để được hỗ trợ tốt hơn
+                </div>
+            </div>
+
+            <div class="grid__row">
+                <div>
+                    <!-- Form input -->
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="profile-form__list">
+
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Họ và tên
+                                    </div>
+                                    <!--                <input type="text" [(ngModel)]="userProfile.displayName"  class="profile-item-input">-->
+                                    <input
+                                        type="text" id="displayName"
+                                        class="form-control"
+                                        name="displayName"
+                                        value="Đặng Công Tấn"
+                                        formControlName="displayName"
+                                    >
+                                </div>
+
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Ngày sinh
+                                    </div>
+
+                                    <input type="date" value="25/03/2001"  class="profile-item-input"/>
+                                    <!--                                <mat-form-field appearance="legacy" class="form-control">-->
+                                    <!--                                    <mat-label>Lựa chọn ngày</mat-label>-->
+                                    <!--                                    <input-->
+                                    <!--                                        style="font-size: 13px;text-align: center"-->
+                                    <!--                                        formControlName="birthday"-->
+                                    <!--                                        matInput [matDatepicker]="picker">-->
+                                    <!--                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+                                    <!--                                    <mat-datepicker #picker></mat-datepicker>-->
+                                    <!--                                </mat-form-field>-->
+                                </div>
+
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Giới tính
+                                    </div>
+
+                                    <!--                <div class="profile-item-radio-group">-->
+                                    <!--                  <input type="radio" [checked]="userProfile.gender==='MALE'" value="MALE" class="profile-item-radio-btn" name="gender">-->
+                                    <!--                  <div class="profile-item-radio-label">Nam</div>-->
+                                    <!--                </div>-->
+                                    <!--                <div class="profile-item-radio-group">-->
+                                    <!--                  <input type="radio" [checked]="userProfile.gender==='FEMALE'" value="FEMALE" class="profile-item-radio-btn" name="gender">-->
+                                    <!--                  <div class="profile-item-radio-label">Nữ</div>-->
+                                    <!--                </div>-->
+                                    <!--                <div class="profile-item-radio-group">-->
+                                    <!--                  <input type="radio" [checked]="userProfile.gender==='OTHER'" value="OTHER" class="profile-item-radio-btn" name="gender">-->
+                                    <!--                  <div class="profile-item-radio-label">Khác</div>-->
+                                    <!--                </div>-->
+                                    <mat-radio-group formControlName="gender"
+                                                     name="gender"
+                                                     color="warn"
+                                                     aria-label="Select an option"
+                                                     class="col-3 d-flex justify-content-between align-items-center">
+                                        <mat-radio-button [value]="'MALE'" checked>Nam</mat-radio-button>
+                                        <!-- DEFAULT VALUE   -->
+                                        <mat-radio-button [value]="'FEMALE'" class="m-2">Nữ</mat-radio-button>
+                                        <mat-radio-button [value]="'OTHER'">Khác</mat-radio-button>
+                                    </mat-radio-group>
+
+                                </div>
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Số điện thoại
+                                    </div>
+                                    <!--                <input type="text"  class="profile-item-input">-->
+                                    <input type="text" formControlName="phone"
+                                           value="0968328344"
+                                           placeholder="+84xxxxxxxxxxxx"
+                                           class="profile-item-input">
+                                </div>
+                                <fieldset formGroupName="user">
+                                    <div class="profile-item-group">
+                                        <div class="profile-item-label">
+                                            Email
+                                        </div>
+                                        <!--                <input type="text"  class="profile-item-input">-->
+                                        <!-- <textarea name=""  [(ngModel)]="textarea" id="" cols="30" rows="10"></textarea>
+                                        <pre class="pre">{{textarea}}</pre> -->
+                                        <input type="email" matInput formControlName="email" value="tanisme25@gmail.com" class="profile-item-input" placeholder="Ex. pat@example.com">
+
+
+                                    </div>
+                                </fieldset>
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                    </div>
+                                    <button class="profile-update-btn btn h-75" type="submit">Cập nhập</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Upload-->
+                        <div class="col-3">
+                            <div class="profile-avatar">
+                                <img src="./assets/Images/avt.jpg" alt=""
+                                     class="profile-avatar__image">
+                                <div class="profile-avatar-btn btn">
+                                    Chọn ảnh
+                                </div>
+                                <input type="file" class="upload-btn" hidden>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <form >
+            <div class="profile__change-pass profile-form">
+                <div class="profile-form__header">
+                    <div class="profile-form__header-title">
+                        Đổi mật khẩu
+                    </div>
+                    <div class="profile-form__header-notice">
+                        Để bảo mật tài khoản, vui lòng không chia sẻ mật khẩu cho người khác
+                    </div>
+                </div>
+                <div class="grid__row">
+                    <div >
+                        <div class="grid__column-9">
+                            <div class="profile-form__list">
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Mật khẩu hiện tại
+                                    </div>
+                                    <input type="password" class="profile-item-input" formControlName="passWord">
+                                </div>
+                                <div class="profile-item-group" >
+                                    <div class="profile-item-label">
+                                    </div>
+                                </div>
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Mật khẩu mới
+                                    </div>
+                                    <input type="password" class="profile-item-input" formControlName="newPassword">
+                                </div>
+                                <div class="profile-item-group" >
+                                    <div class="profile-item-label">
+                                    </div>
+                                </div>
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                        Xác nhận mật khẩu
+                                    </div>
+                                    <input type="password" class="profile-item-input" formControlName="newPasswordConfirm" >
+                                </div>
+                                <div class="profile-item-group" >
+                                    <div class="profile-item-label">
+                                    </div>
+                                </div>
+                                <div class="profile-item-group">
+                                    <div class="profile-item-label">
+                                    </div>
+                                    <button class="profile-confirm-btn btn h-75" type="submit">Xác nhận</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</form>
